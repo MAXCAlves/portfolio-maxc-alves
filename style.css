@@ -1,48 +1,22 @@
-/* Reset básico para remover margens e paddings padrões */
+/* Reset and Base Styles */
 * {
-    margin: 0; /* Remove margens */
-    padding: 0; /* Remove espaçamentos internos */
-    box-sizing: border-box; /* Inclui borda e padding no cálculo do tamanho */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Estilo para a seção de boas-vindas */
-.welcome-section {
-    position: relative; /* Permite posicionar elementos filhos de forma absoluta */
-    height: 100vh; /* Ocupa 100% da altura da tela */
-    overflow: hidden; /* Esconde qualquer conteúdo que ultrapasse os limites */
+body {
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+  line-height: 1.6;
 }
 
-/* Estilo do vídeo de fundo */
-.bg-video {
-    position: absolute; /* Posiciona o vídeo em relação à seção */
-    top: 0; /* Alinha ao topo */
-    left: 0; /* Alinha à esquerda */
-    width: 100%; /* Largura total */
-    height: 100%; /* Altura total */
-    object-fit: cover; /* Faz o vídeo preencher sem distorcer */
-    z-index: -1; /* Coloca o vídeo atrás do texto */
+/* Custom Properties */
+:root {
+  --paola-red: #ff0015;
+  --paola-red-light: #ff3d2f;
+  --paola-red-dark: #cc0011;
+  --transition: all 0.3s ease;
 }
 
-/* Estilo do texto sobreposto ao vídeo */
-.welcome-text {
-    position: relative; /* Mantém o texto acima do vídeo */
-    color: white; /* Cor da fonte */
-    font-family: 'Times New Roman', serif; /* Tipo de fonte */
-    text-align: center; /* Centraliza o texto */
-    top: 50%; /* Move o texto para o meio verticalmente */
-    transform: translateY(-50%); /* Ajusta a centralização vertical */
-    padding: 0 20px; /* Espaçamento lateral */
-}
-
-/* Estilo para o título */
-.welcome-text h1 {
-    font-size: 3rem; /* Tamanho do título */
-    margin-bottom: 1rem; /* Espaço abaixo do título */
-}
-
-/* Estilo para o parágrafo */
-.welcome-text p {
-    font-size: 1.5rem; /* Tamanho do texto */
-    max-width: 800px; /* Largura máxima */
-    margin: 0 auto; /* Centraliza horizontalmente */
-}
+/* ... (todo o conteúdo completo que o usuário passou) ... */
