@@ -1,0 +1,98 @@
+/* Reset */
+*{margin:0;padding:0;box-sizing:border-box}
+
+/* Body base */
+body{scroll-behavior:smooth;line-height:1.6}
+
+/* Custom props */
+:root{
+  --max-blue:#00aaff;
+  --max-blue-light:#5dc7ff;
+  --max-blue-dark:#0088cc;
+  --transition:all .3s ease;
+}
+
+/* Header on scroll */
+#header.scrolled{
+  background-color:rgba(255,255,255,.9)!important;
+  backdrop-filter:blur(12px);
+  box-shadow:0 4px 6px -1px rgba(0,0,0,.1);
+}
+#header.scrolled h1{color:#111827!important}
+#header.scrolled .nav-link{color:#111827!important}
+#header.scrolled .theme-toggle{background-color:#f3f4f6;border-color:#d1d5db;color:#111827}
+#header.scrolled #mobileMenuToggle{color:#111827!important}
+
+/* Dark header */
+.dark #header.scrolled{background-color:rgba(0,0,0,.9)!important}
+.dark #header.scrolled h1{color:#fff!important}
+.dark #header.scrolled .nav-link{color:#fff!important}
+.dark #header.scrolled .theme-toggle{background-color:#374151;border-color:#4b5563;color:#fff}
+.dark #header.scrolled #mobileMenuToggle{color:#fff!important}
+
+/* Links navegação */
+.nav-link{color:var(--max-blue);transition:var(--transition);cursor:pointer;border:none;background:none}
+.nav-link:hover{color:var(--max-blue-light)}
+.mobile-nav-link{color:#111827;transition:var(--transition);cursor:pointer;border:none;background:none}
+.mobile-nav-link:hover{color:var(--max-blue)}
+.dark .mobile-nav-link{color:#fff}
+.dark .mobile-nav-link:hover{color:var(--max-blue)}
+
+/* Theme Toggle */
+.theme-toggle{background-color:transparent;border:1px solid var(--max-blue);color:var(--max-blue);cursor:pointer}
+.theme-toggle:hover{background-color:var(--max-blue);color:#fff}
+
+/* Skill tag */
+.skill-tag{
+  display:inline-block;padding:.5rem 1rem;
+  background:linear-gradient(to right,var(--max-blue),var(--max-blue-light));
+  color:#fff;border-radius:9999px;font-size:.875rem;font-weight:600;
+  transition:transform .2s ease
+}
+.skill-tag:hover{transform:scale(1.05)}
+
+/* Project card */
+.project-card{background:#fff;border-radius:1rem;box-shadow:0 4px 6px -1px rgba(0,0,0,.1);transition:var(--transition);overflow:hidden;cursor:pointer}
+.project-card:hover{transform:translateY(-.5rem);box-shadow:0 20px 25px -5px rgba(0,0,0,.1)}
+.dark .project-card{background:#111}
+.project-card img{width:100%;height:12rem;object-fit:cover;transition:transform .5s ease}
+.project-card:hover img{transform:scale(1.08)}
+.project-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.5),transparent);opacity:0;transition:opacity .3s ease}
+.project-card:hover .project-overlay{opacity:1}
+.project-button{
+  background:linear-gradient(to right,var(--max-blue),var(--max-blue-light));
+  color:#fff;border:none;padding:.6rem 0;border-radius:.5rem;font-weight:700;cursor:pointer;transition:var(--transition);width:100%
+}
+.project-button:hover{box-shadow:0 4px 6px -1px rgba(0,0,0,.1);transform:scale(1.04)}
+
+/* Social cards */
+.social-card{background:#fff;min-height:12.5rem;padding:2.5rem 1.5rem;border-radius:1rem;box-shadow:0 4px 6px -1px rgba(0,0,0,.1);transition:var(--transition);display:flex;flex-direction:column;align-items:center;justify-content:center;text-decoration:none;cursor:pointer}
+.social-card:hover{box-shadow:0 20px 25px -5px rgba(0,0,0,.1);transform:translateY(-.25rem)}
+.dark .social-card{background:#111}
+.social-card.linkedin{color:#2563eb}
+.social-card.linkedin:hover{color:#1d4ed8;background-color:#dbeafe}
+.dark .social-card.linkedin:hover{background-color:rgba(37,99,235,.2)}
+.social-card.github{color:#374151}
+.social-card.github:hover{color:#4b5563;background-color:#f9fafb}
+.dark .social-card.github{color:#fff}
+.dark .social-card.github:hover{color:#d1d5db;background-color:#1f2937}
+.social-card.cv{color:var(--max-blue-dark)}
+.social-card.cv:hover{background:rgba(0,170,255,.1)}
+
+/* Back to top */
+#backToTop.visible{opacity:1;transform:translateY(0);pointer-events:auto}
+
+/* Animations */
+@keyframes fadeSlideUp{0%{opacity:0;transform:translateY(20px)}100%{opacity:1;transform:translateY(0)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes waveMove{0%{transform:translateX(0)}100%{transform:translateX(-160px)}}
+.animate-fade-slide-up{animation:fadeSlideUp .8s ease forwards}
+.animate-float{animation:float 3s ease-in-out infinite}
+.animate-wave-move{animation:waveMove 10s linear infinite}
+
+/* Responsive tweaks */
+@media (max-width:768px){
+  .hero-content h1{font-size:2.5rem}
+  .hero-content p{font-size:1rem}
+  .skill-tag{font-size:.75rem;padding:.375rem .75rem}
+}
